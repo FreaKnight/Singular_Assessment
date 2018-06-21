@@ -1,0 +1,55 @@
+﻿<style>
+    .Title {
+        width: 140px;
+    }
+
+    th:nth-last-child(1),
+    th:nth-last-child(2),
+    td:nth-last-child(1),
+    td:nth-last-child(2) {
+        text-decoration: none;
+        cursor: default;
+        width: auto;
+    }
+</style>
+
+<div class="AppContainer">
+    <h1>Products</h1>
+    <div class="row">
+        <form id="ProductResultsForm" onsubmit="">
+            <table id="ProductResultsTable">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th class="Title">Title</th>
+                        <th>Descr</th>
+                        <th>Price</th>
+                        <th>By selecting a client this product will be added to their basket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="hidden" name="ProductID" />
+                            <img src="" name="ImgPath" width="200" />
+                        </td>
+                        <td class="Title">
+                            <span name="Title"></span>
+                        </td>
+                        <td>
+                            <span name="Descr"></span>
+                        </td>
+                        <td>
+                            <span name="Price"></span>
+                        </td>
+                        <td>
+                            <select name="ClientID" ddproc="usp_Clients_dd">
+                                <option value="">...none chosen...</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

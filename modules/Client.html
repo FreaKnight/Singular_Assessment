@@ -1,0 +1,126 @@
+﻿<style>
+    /*Scoped styles if the module needs nonstandard styles*/
+    th:nth-last-child(1),
+    th:nth-last-child(2),
+    td:nth-last-child(1),
+    td:nth-last-child(2) {
+        text-decoration: underline;
+        cursor: pointer;
+        width: 130px;
+    }
+</style>
+
+<div class="AppContainer">
+    <h1>Client Search</h1>
+    <div class="row">
+        <form id="ClientSearchForm" onsubmit="">
+            <div class="row">
+                <div>
+                    <label for="ClientName">Name:</label>
+                </div>
+                <div>
+                    <input type="text" name="ClientName" />
+                </div>
+                <div>
+                    <label for="ClientSurname">Surname:</label>
+                </div>
+                <div>
+                    <input type="text" name="ClientSurname" />
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="StreetAddress">Street Address:</label>
+                </div>
+                <div>
+                    <input type="text" name="StreetAddress" />
+                </div>
+                <div>
+                    <label for="AddrTypeCode">Address Type:</label>
+                </div>
+                <div>
+                    <select name="AddrTypeCode" ddproc="usp_AddrTypeCode_dd">
+                        <option value="">...none chosen...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="Suburb">Suburb:</label>
+                </div>
+                <div>
+                    <input type="text" name="Suburb" />
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="Town">Town:</label>
+                </div>
+                <div>
+                    <input type="text" name="Town" />
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="PostCode">Post Code:</label>
+                </div>
+                <div>
+                    <input type="text" name="PostCode" />
+                </div>
+            </div>
+            <button type="button" name="Search">Search</button>
+            <button type="button" name="Create">Create</button>
+        </form>
+    </div>
+    <div class="row">
+        <form id="ClientResultsForm" onsubmit="">
+            <table id="ClientResultsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Address Type</th>
+                        <th>Street Address</th>
+                        <th>Suburb</th>
+                        <th>Town</th>
+                        <th>Post Code</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="hidden" name="ClientID" />
+                            <span name="ClientName"></span>
+                        </td>
+                        <td>
+                            <span name="ClientSurname"></span>
+                        </td>
+                        <td>
+                            <span name="AddrDescr"></span>
+                        </td>
+                        <td>
+                            <span name="StreetAddress"></span>
+                        </td>
+                        <td>
+                            <span name="Suburb"></span>
+                        </td>
+                        <td>
+                            <span name="Town"></span>
+                        </td>
+                        <td>
+                            <span name="PostCode"></span>
+                        </td>
+                        <td>
+                            <a name="del">Remove Client</a>
+                        </td>
+                        <td>
+                            <a name="edit">Edit Client</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
